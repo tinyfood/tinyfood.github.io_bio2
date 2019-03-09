@@ -1,0 +1,110 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: "static/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: farmers
+    label: Farmers
+    format: yml
+    extension: yml
+    folder: data/products/
+    create: true
+    slug: '{{title}}'
+    fields:
+      - {label: Name, name: name, widget: string, required: true}
+      - {label: Price, name: price, widget: number}
+
+  #yaml middleman data example
+  - name: product
+    label: Product
+    format: yml
+    extension: yml
+    folder: data/products/
+    create: true
+    slug: '{{title}}'
+    fields:
+      - {label: Name, name: name, widget: string, required: true}
+      - {label: Price, name: price, widget: number}
+      - {label: Publish Date, name: date, widget: datetime}
+      - {label: Image, name: image, widget: image, required: true}
+      - {label: Sale, name: weight, widget: number}
+      - {label: Organic, name: weight, widget: number}
+      - {label: Producer, name: text, widget: string, required: true}
+      - {label: Weight, name: weight, widget: number}
+      - {label: Description, name: body, widget: markdown}
+      - {label: Link, name: link, widget: string}
+
+#via markdown nuxt-netlify-cms-starter example
+  - name: knowledgebase
+    label: Knowlegebase
+    folder: source/knowledgebase/
+    extension: .html.md
+    format: frontmatter
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:
+      - {label: Title, name: title, widget: string, required: true}
+      - {label: Author, name: author, widget: string, required: true}
+      - {label: Publish Date, name: date, widget: datetime}
+      - {label: Description, name: description, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Body, name: body, widget: markdown}
+    
+  - name: pages
+    label: Pages
+    files:
+      - file: "data/pages/home.yml"
+        label: Homepage
+        name: home
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Date, name: date, widget: date}
+              - {label: Author, name: author, widget: string}
+              - {label: Image, name: image, widget: image}
+          - label: Story
+            name: story
+            widget: markdown
+            fields:
+              - {label: story, name: story, widget: string}              
+
+  - name: settings
+    label: Settings
+    files:
+      - file: data/settings/navigation.yml
+        label: Navigation
+        name: navigation
+        fields:
+          - label: Navigation
+            name: nav_items
+            widget: list
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: Path, name: path, widget: string}
+      - file: data/settings/units.yml
+        label: Units
+        name: units
+        fields:
+          - label: Currency
+            name: currency
+            widget: select
+            options: ['€', '$', '£']
+            default: '€'
+
+          - label: Weight
+            name: weight
+            widget: select
+            options: ['kg', ' st', ' lb']
+            default: 'kg'
+
+
+

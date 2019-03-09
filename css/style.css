@@ -1,0 +1,431 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,400italic,700);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bitter";
+}
+
+@-webkit-keyframes openUp {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes openUp {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  background: white;
+  border: 1px solid black;
+  transition: all 0.1s;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+button .fa {
+  font-size: 1em !important;
+  vertical-align: middle;
+}
+button:hover {
+  color: white;
+  background: black;
+}
+
+input {
+  display: inline-block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0.5em;
+  margin: 0.5em 0.5em 0.5em 0;
+  width: 50px;
+  background: white;
+  border: 1px solid black;
+  transition: all 0.1s;
+  font-size: 14px;
+}
+
+label {
+  font-size: 0.75em;
+  margin-right: 0.5em;
+}
+
+.checkout-area table {
+  margin: 0 auto;
+  padding: 0.5em;
+  width: 100%;
+  max-width: 40em;
+  text-align: left;
+}
+.checkout-area table th, .checkout-area table td {
+  padding: 0 0.25em;
+}
+@media (max-width: 600px) {
+  .checkout-area table th:nth-child(3), .checkout-area table td:nth-child(3) {
+    display: none;
+  }
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.vert-bottom {
+  vertical-align: bottom;
+}
+
+.vert-middle {
+  vertical-align: middle;
+}
+
+.main-wrapper .header {
+  position: relative;
+  background: linear-gradient(to left, #16222A, #3A6073);
+  background-size: cover;
+  height: 25em;
+  width: 100vw;
+  box-shadow: inset -1px -3px 5px rgba(0, 0, 0, 0.5), inset 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.main-wrapper .header h1 {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3em;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5), -1px -3px 5px rgba(0, 0, 0, 0.5);
+}
+.main-wrapper #vue {
+  margin: 0 auto;
+  padding: 0.5em;
+  text-align: center;
+}
+.main-wrapper #vue .cart {
+  position: fixed;
+  right: 0em;
+  top: 0em;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  z-index: 1;
+}
+.main-wrapper #vue .cart .fa-shopping-cart, .main-wrapper #vue .cart .cart-size {
+  cursor: pointer;
+  font-size: 1.25em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.main-wrapper #vue .cart .fa-shopping-cart {
+  padding: 1em 1em 1em 0;
+}
+.main-wrapper #vue .cart .cart-size {
+  padding: 1em 0 1em 1em;
+}
+.main-wrapper #vue .cart .cart-items {
+  padding: 0 1em 2em 1em;
+}
+.main-wrapper #vue .cart .cart-items .cartTable {
+  width: 20em;
+}
+.main-wrapper #vue .cart .cart-items .cartImage {
+  width: 4em;
+  height: 4em;
+  margin: 0.5em auto;
+  position: relative;
+  cursor: pointer;
+}
+.main-wrapper #vue .cart .cart-items .cartImage:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  transition: all 0.1s;
+}
+.main-wrapper #vue .cart .cart-items .cartImage i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  z-index: 1;
+  transition: all 0.25s;
+}
+.main-wrapper #vue .cart .cart-items .cartImage:hover i {
+  text-shadow: 1px 2px 5px black;
+}
+.main-wrapper #vue .cart .cart-items .cartImage:hover:after {
+  background: rgba(0, 0, 0, 0.5);
+}
+.main-wrapper #vue .cart .cart-items .cartImage:active i {
+  text-shadow: 0px 0px 1px black;
+}
+.main-wrapper #vue .cart .cart-items .cartSubTotal {
+  border-top: 1px solid white;
+  font-size: 1.25em;
+}
+.main-wrapper #vue .cart .cart-items .clearCart {
+  float: left;
+  margin-top: 2em;
+  margin-bottom: 1.25em;
+}
+.main-wrapper #vue .cart .cart-items .checkoutCart {
+  float: right;
+  margin-top: 2em;
+  margin-bottom: 1.25em;
+}
+.main-wrapper #vue .products {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80em;
+}
+.main-wrapper #vue .products .product {
+  display: inline-block;
+  margin: 0.75em;
+  width: 100%;
+  max-width: 18em;
+}
+.main-wrapper #vue .products .product .image {
+  width: 18em;
+  height: 18em;
+  margin-bottom: 0.5em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+}
+@media (max-width: 600px) {
+  .main-wrapper #vue .products .product .image {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+.main-wrapper #vue .products .product .image:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.25s;
+}
+.main-wrapper #vue .products .product .image:after {
+  content: "\f00e";
+  font-family: "FontAwesome";
+  position: absolute;
+  top: 250%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5em;
+  color: white;
+  pointer-events: none;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s;
+}
+.main-wrapper #vue .products .product .image:hover {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.main-wrapper #vue .products .product .image:hover:before {
+  opacity: 1;
+}
+.main-wrapper #vue .products .product .image:hover:after {
+  top: 50%;
+}
+.main-wrapper #vue .products .product .name {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.main-wrapper #vue .products .product .description {
+  font-style: italic;
+}
+.main-wrapper #vue .products .product .price {
+  font-weight: bold;
+}
+.main-wrapper #vue .modalWrapper {
+  position: relative;
+}
+.main-wrapper #vue .modalWrapper .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+.main-wrapper #vue .modalWrapper .prevProduct, .main-wrapper #vue .modalWrapper .nextProduct {
+  position: fixed;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 1em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 5;
+}
+.main-wrapper #vue .modalWrapper .prevProduct {
+  left: calc(50% - 9.5em);
+}
+.main-wrapper #vue .modalWrapper .nextProduct {
+  right: calc(50% - 9.5em);
+}
+.main-wrapper #vue .modalWrapper .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: white;
+  padding: 2em;
+  text-align: center;
+  max-height: calc(100% - 2em);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-animation: openUp 0.1s;
+          animation: openUp 0.1s;
+  z-index: 3;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.main-wrapper #vue .modalWrapper .modal .close {
+  position: fixed;
+  top: -0.5em;
+  right: -0.5em;
+  cursor: pointer;
+  padding: 1em;
+}
+.main-wrapper #vue .modalWrapper .modal .imageWrapper {
+  width: 25em;
+  height: 25em;
+  margin: 0.5em auto;
+  overflow: hidden;
+}
+.main-wrapper #vue .modalWrapper .modal .imageWrapper .image {
+  width: 100%;
+  height: 100%;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  z-index: 4;
+  cursor: crosshair;
+}
+.main-wrapper #vue .modalWrapper .modal .additionalImages {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.main-wrapper #vue .modalWrapper .modal .additionalImages .additionalImage {
+  flex-grow: 1;
+  margin: 0.5em 1em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 25%;
+  height: auto;
+  position: relative;
+}
+.main-wrapper #vue .modalWrapper .modal .additionalImages .additionalImage:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 75%;
+}
+.main-wrapper #vue .modalWrapper .modal .additionalImages .additionalImage > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.main-wrapper #vue .modalWrapper .modal .additionalImages .additionalImage:nth-of-type(1n) {
+  margin-left: 0;
+}
+.main-wrapper #vue .modalWrapper .modal .additionalImages .additionalImage:nth-of-type(4n) {
+  margin-right: 0;
+}
+.main-wrapper #vue .modalWrapper .modal .name {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.main-wrapper #vue .modalWrapper .modal .description {
+  font-style: italic;
+}
+.main-wrapper #vue .modalWrapper .modal .details {
+  max-width: 25em;
+  margin: 0 auto;
+  padding: 0.5em 0;
+}
+.main-wrapper #vue .modalWrapper .modal .price {
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+@media (max-width: 600px) {
+  .main-wrapper #vue .cart, .main-wrapper #vue .cart .cartTable {
+    width: 100% !important;
+  }
+  .main-wrapper #vue .products {
+    text-align: left;
+  }
+  .main-wrapper #vue .products .product {
+    display: block;
+  }
+  .main-wrapper #vue .products .product .image {
+    width: calc(100vw - 2.5em);
+    height: calc(100vw - 2.5em);
+  }
+  .main-wrapper #vue .modalWrapper .prevProduct, .main-wrapper #vue .modalWrapper .nextProduct {
+    display: none;
+  }
+  .main-wrapper #vue .modalWrapper .modal.checkout {
+    width: 100%;
+  }
+  .main-wrapper #vue .modalWrapper .modal .imageWrapper {
+    width: calc(100vw - 4em);
+    height: calc(100vw - 4em);
+  }
+}
